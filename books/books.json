@@ -1,0 +1,44 @@
+[
+    {
+        "id": 0,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "path": "books/TheGreatGatsby.html",
+        "chapters": 10
+    },
+    {
+        "id": 1,
+        "title": "Peter Pan",
+        "author": "James M. Barrie",
+        "path": "books/PeterPan.html",
+        "chapters": 19
+    },
+    {
+        "id": 2,
+        "title": "The Picture of Dorian Gray",
+        "author": "Oscar Wilde",
+        "path": "books/DorianGray.html",
+        "chapters": 23
+    },
+    {
+        "id": 3,
+        "title": "The Time Machine",
+        "author": "H. G. Wells",
+        "path": "books/TimeMachine.html",
+        "chapters": 19
+    },
+    {
+        "id": 4,
+        "title": "The Adventures of Sherlock Holmes",
+        "author": "Arthur Conan Doyle",
+        "path": "books/Sherlock.html",
+        "chapters": 13
+    },
+    {
+        "id": 5,
+        "title": "Around the World in 80 Days",
+        "author": "Jules Verne",
+        "path": "books/80days.html",
+        "chapters": 38
+    }
+]

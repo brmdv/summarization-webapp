@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Book summarization</title>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Book summarization with NLP</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis velit impedit odio eos aut earum aperiam
+            quas temporibus odit suscipit officia, veniam perspiciatis laudantium minima hic libero. Veritatis, illum
+            aspernatur?</p>
+
+        <hr>
+        <h2>Try out</h2>
+        <p>
+            Select a predownloaded book to try out.
+        </p>
+        <p>
+        <form action="summarize" , method="GET">
+            <select name="book" id="book_select">
+                {% for book in books %}
+                <option value="{{ book.id }}">{{ book.title }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Summarize</button>
+        </form>
+        </p>
+        <hr>
+        <h2>Choose your own book</h2>
+        <p>
+            Enter the link to a valid Project Gutenberg book.
+        </p>
+    </div>
+
+</body>
+
+</html>
