@@ -19,7 +19,7 @@ for i, bookpath in enumerate(available_books):
             "title": book.book_title,
             "author": book.book_author,
             "path": str(bookpath),
-            "chapters": len(book.chapter_names),
+            "chapters": book.chapter_names,
         }
     )
 
