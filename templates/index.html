@@ -21,14 +21,13 @@
     <p>
         <select name="book" id="book_select">
             {% for book in books %}
-            <option value="{{ book.id }}">{{ book.title }}</option>
+            <option value="{{ book.id }}" {% if book.default %} selected{% endif %}>{{ book.title }}</option>
             {% endfor %}
         </select>
         <button type="submit">Summarize</button>
     </p>
 </form>
 <hr>
-{#
 <h2>Choose your own book</h2>
 <p>
     Enter the link to a valid Project Gutenberg book.
@@ -36,12 +35,13 @@
 <form action="/summarize" method="get">
     <p>
         <label for="gutlink">URL</label>
-        <input type="url" name="url" id="gutlink" placeholder="https://www.gutenberg.org/files/1661/1661-h/1661-h.htm"
-            style="width: 100%"><button type="submit">Summarize</button>
+        <input disabled type="url" name="url" id="gutlink"
+            placeholder="https://www.gutenberg.org/files/1661/1661-h/1661-h.htm" style="width: 100%"><button
+            type="submit" disabled>Summarize</button>
     </p>
 </form>
 <hr>
-#}
+
 <h2>Text input</h2>
 <p>
     Fill in your own text to summarize.
