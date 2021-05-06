@@ -8,6 +8,6 @@ Live demo is hosted on Heroku.
 <https://------.herokuapp.com>
 
 
-## Installation 
-
+## API information
+This app 
 

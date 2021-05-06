@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 import json
 
 from flask.json import jsonify
@@ -30,3 +30,15 @@ def summarize():
         return "Link loading not implemented."
 
     return "Not ready"
+
+
+@app.route("/book/<int:id>")
+def book_info(id):
+    """Get available information about book in JSON format."""
+    try:
+        book = available_books[int(id)]
+        return jsonify(book)
+    except IndexError:
+        return Response("Book not found", status=400)
+    except:
+        return Response("Internal error.", status=404)
