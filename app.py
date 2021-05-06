@@ -23,7 +23,12 @@ def summarize():
 
     elif request.args.get("book"):
         # use selected predownloaded book
-        return jsonify(available_books[int(request.args.get("book"), 0)])
+        return render_template(
+            "summary.html",
+            book=available_books[int(request.args.get("book"))],
+            info={"Used model": "None"},
+            characters=[],
+        )
 
     elif request.args.get("url"):
         # user sent link

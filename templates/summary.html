@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📗</text></svg>">
+    <title>Summary of {{ book.title }} – {{ author }}</title>
+    <style>
+        h1 .title {
+            font-style: italic;
+            color: rgb(4, 23, 75);
+        }
+
+        h1 .author {
+            color: rgb(4, 23, 75);
+            font-weight: normal;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/">Home</a>
+    </header>
+    <h1>Summary of <br><span class="title">{{ book.title }}</span> – <span class="author">{{ book.author }}</span></h1>
+    <details>
+        <summary><b>Chapters</b> ({{book.chapters|length}})</summary>
+        <ul>
+            {% for chapter in book.chapters %}<li>
+                {{chapter}}</li> {% endfor %}</ul>
+    </details>
+    <details>
+        <summary><b>Technical details</b></summary>
+        <table>
+            {% for key in info %}
+            <tr>
+                <th>{{ key }}</th>
+                <td>{{ info[key] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </details>
+    <h2>Results</h2>
+    <h3>Main characters</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Character name</th>
+                <th>How often mentioned in text?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for character in characters %}
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Story summary</h3>
+    <p style="font-style: italic;">
+        Not implemented.
+    </p>
+</body>
+
+</html>
