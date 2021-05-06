@@ -23,11 +23,13 @@ def summarize():
 
     elif request.args.get("book"):
         # use selected predownloaded book
+        book = available_books[int(request.args.get("book"))]
         return render_template(
             "summary.html",
-            book=available_books[int(request.args.get("book"))],
+            book=book,
             info={"Used model": "None"},
             characters=[],
+            pagetitle=f"Summary of {book['title']} – {book['author']}",
         )
 
     elif request.args.get("url"):

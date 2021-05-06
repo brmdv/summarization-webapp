@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📗</text></svg>">
+    <title>{% if pagetitle %}{{pagetitle}} – {%endif%}Bram’s Book Summarizer</title>
+    <style>
+        h1 .title {
+            font-style: italic;
+            color: rgb(4, 23, 75);
+        }
+
+        h1 .author {
+            color: rgb(4, 23, 75);
+            font-weight: normal;
+
+        }
+
+        header {
+            display: flex;
+        }
+
+        header>* {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="https://github.com/brmdv/usecase-summarization">Project on Github</a>
+        <a href="https://github.com/brmdv/summarization-webapp">Website source</a>
+    </header>
+    <div class="content">
+        {% block content %}
+        <h1>{{ pagetitle }}</h1>
+        {{ page_message }}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
