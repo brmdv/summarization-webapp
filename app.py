@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, request, Response, redirect
 import json
 
 from flask.json import jsonify
@@ -19,11 +19,18 @@ def index():
 def summarize():
     if request.method == "POST":
         # user sent raw text
-        return request.form.get("text")
+        return render_template(
+            "base.html",
+            pagetitle="Summary of user text",
+            page_message=request.form.get("text"),
+        )
 
     elif request.args.get("book"):
         # use selected predownloaded book
         book = available_books[int(request.args.get("book"))]
+
+        # book summarization goes here
+
         return render_template(
             "summary.html",
             book=book,
@@ -34,9 +41,14 @@ def summarize():
 
     elif request.args.get("url"):
         # user sent link
-        return "Link loading not implemented."
+        return render_template(
+            "base.html",
+            pagetitle="Not implemented yet",
+            page_message="Link loading not implemented.",
+            status=400,
+        )
 
-    return "Not ready"
+    return redirect("/")
 
 
 @app.route("/book/<int:id>")
